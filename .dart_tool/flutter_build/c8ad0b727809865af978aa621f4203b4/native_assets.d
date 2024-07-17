@@ -1,0 +1,1 @@
+ /Users/mac/Desktop/mywallet/.dart_tool/flutter_build/c8ad0b727809865af978aa621f4203b4/native_assets.yaml: 
