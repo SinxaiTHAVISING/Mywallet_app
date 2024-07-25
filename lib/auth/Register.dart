@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'Login.dart';
 class Register extends StatelessWidget {
   const Register({super.key});
 
@@ -117,6 +117,11 @@ class Register extends StatelessWidget {
                       TextButton(
                         onPressed: () {
                           //
+                           Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const Loging(),
+                        ),
+                      );
                         },
                         child: Text('ເຂົ້າສູ່ລະບົບ',style:TextStyle(color:Colors.white)),
                         style: TextButton.styleFrom(
