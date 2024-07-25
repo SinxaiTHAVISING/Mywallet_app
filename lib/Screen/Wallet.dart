@@ -9,67 +9,117 @@ class Wallet extends StatefulWidget {
 }
 
 class _WalletState extends State<Wallet> {
-
-  TextEditingController _searchController = TextEditingController();
-  String _searchResult = '';
-  void _performSearch() {
-    setState(() {
-      _searchResult = _searchController.text;
-    });
-  }
-
-   @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Wallet"),
-      backgroundColor: const Color(0xFF68C3AC),),
-      body:SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-               Container(
-                  width: 500,
-                  height: 100,
-                  decoration: BoxDecoration(
-                color: Colors.teal,
-                borderRadius: BorderRadius.circular(30),),
-                  child: Column(
-                    children: [
-                      Text("Mr JonhSmith",
-                      style: TextStyle(fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'NotoSansLao'
-                      )),
-                      Text("129-232-222-12",style:TextStyle(
-                        color: Colors.white
-                      ),)
-                    ],
-                  ),
+      appBar: AppBar(
+        title: const Text("Wallet"),
+        backgroundColor: const Color(0xFF68C3AC),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Card(
+              color: Color(0xFF68C3AC),
+              child: ListTile(
+                title: Text('Mr. Johnsmith',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                subtitle: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '129-55445-556-68',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    SizedBox(height: 5.0),
+                    Text('ຍອດງິນ: 300,000,000 LAK',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold)),
+                  ],
                 ),
-              // Container(
-              //    margin:const EdgeInsets.only(top: 10),
-              //     width: double.infinity,
-              //     height: 100,
-              //     color: Colors.red,
-              //      decoration:const BoxDecoration(
-              //       color: Colors.green,
-              //       borderRadius: BorderRadius.only(
-              //           topLeft: Radius.circular(38),
-              //           bottomRight: Radius.circular(38)),
-              //     ),
-              //   child: Column(
-              //            children: [
-              //             Text(
-              //                 "Mr. Smith",
-              //                 style: TextStyle(fontWeight: FontWeight.bold),
-              //               ),
-              //            ],
-              //           ),
-              // )
-            ],
-            
-          ),
+              ),
+            ),
+            SizedBox(height: 16.0),
+            Card(
+              color: Color(0xFF68C3AC),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('ສະຫຼຸບຂອງມື້ນີ້',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 18)),
+                        Text('Date:01/07/2024',
+                            style: TextStyle(color: Colors.white)),
+                      ],
+                    ),
+                    SizedBox(height: 8.0),
+                    Text(
+                      'ລາຍຮັບ: 21,000,000 LAK',
+                    ),
+                    Text(
+                      'ລາຍຈ່າຍ: 1,000,000 LAK',
+                    ),
+                    Text(
+                      'Balance: 20,000,000 LAK',
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 16.0),
+            Card(
+              color: Color(0xFF68C3AC),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('ສະຫຼຸບຍອດຂອງເດືອນ',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 18)),
+                        Text('07 – July',
+                            style: TextStyle(color: Colors.white)),
+                      ],
+                    ),
+                    SizedBox(height: 8.0),
+                    Text(
+                      'ລາຍຮັບ: 21,000,000 LAK',
+                    ),
+                    Text(
+                      'ລາຍຈ່າຍ: 1,000,000 LAK',
+                    ),
+                    Text(
+                      'Balance: 20,000,000 LAK',
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top:150),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  FloatingActionButton(
+                    onPressed: () {
+                      // Add your onPressed code here!
+                    },
+                    child: const Icon(Icons.qr_code),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

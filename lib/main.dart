@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mywallet/auth/Login.dart';
 import 'Launcher.dart';
+import 'auth/Login.dart';
+import 'Screen/Loading.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -17,7 +21,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'NotoSansLao',
       ),
-      home: const Launcher(),
+      // home: const Launcher(),
+      home:  Loading(),
     );
   }
 }
