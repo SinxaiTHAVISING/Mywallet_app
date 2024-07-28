@@ -1,5 +1,7 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:image_picker/image_picker.dart';
 
 class Wallet extends StatefulWidget {
   const Wallet({super.key});
@@ -9,6 +11,19 @@ class Wallet extends StatefulWidget {
 }
 
 class _WalletState extends State<Wallet> {
+  // ----------------------------
+  final ImagePicker _picker = ImagePicker();
+  File? _image;
+
+  Future<void> _openCamera() async {
+    final XFile? image = await _picker.pickImage(source: ImageSource.camera);
+    if (image != null) {
+      setState(() {
+        _image = File(image.path);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -111,9 +126,9 @@ class _WalletState extends State<Wallet> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   FloatingActionButton(
-                    onPressed: () {
+                    onPressed: 
                       // Add your onPressed code here!
-                    },
+                      _openCamera,
                     child: const Icon(Icons.qr_code),
                   ),
                 ],
